@@ -108,10 +108,9 @@ class _MyAppState extends State<MyApp> {
         useMaterial3: true,
         brightness: Brightness.light,
         scaffoldBackgroundColor: t.bgColor,
-        pageTransitionsTheme: PageTransitionsTheme(
+        pageTransitionsTheme: const PageTransitionsTheme(
           builders: {
-            TargetPlatform.android: const ZoomPageTransitionsBuilder(),
-            TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+            TargetPlatform.android: ZoomPageTransitionsBuilder(),
           },
         ),
         colorScheme: ColorScheme.fromSeed(
@@ -123,10 +122,9 @@ class _MyAppState extends State<MyApp> {
         useMaterial3: true,
         brightness: Brightness.dark,
         scaffoldBackgroundColor: t.bgColor,
-        pageTransitionsTheme: PageTransitionsTheme(
+        pageTransitionsTheme: const PageTransitionsTheme(
           builders: {
-            TargetPlatform.android: const ZoomPageTransitionsBuilder(),
-            TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+            TargetPlatform.android: ZoomPageTransitionsBuilder(),
           },
         ),
         colorScheme: ColorScheme.fromSeed(
