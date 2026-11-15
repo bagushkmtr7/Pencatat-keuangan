@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
@@ -25,11 +25,16 @@ jobs:
           channel: 'stable'
           cache: true
 
+      - name: Regenerate Android files
+        run: |
+          rm -rf android
+          flutter create --platforms=android .
+
       - name: Install dependencies
         run: flutter pub get
 
       - name: Build APK
-        run: flutter build apk --release --android-skip-build-dependency-validation
+        run: flutter build apk --release
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
